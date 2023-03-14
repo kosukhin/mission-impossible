@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сложные стрелки</title>
+</head>
+<style>
+    :root {
+        --borderRadius: 10px;
+    }
+    .Block {
+        position: relative;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: var(--borderRadius);
+        text-align: center;
+    }
+
+    .Block:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        margin-top: -15px;
+        width: 30px;
+        height: 30px;
+        left: calc(50% - 15px);
+        background: inherit;
+        z-index: 1;
+        transform: rotate(-45deg);
+        border-bottom-left-radius: var(--borderRadius);
+        clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+    }
+
+    .Block-Wrapper {
+        max-width: 300px;
+    }
+</style>
+<body>
+<div class="Block-Wrapper">
+    <div class="Block" style="background:#fc8787;">Content1</div>
+    <div class="Block" style="background: #fffa74;">Content2</div>
+    <div class="Block" style="background: #74fffd;">Content3</div>
+    <div class="Block" style="background: #a5ff74;">Content4</div>
+</div>
+</body>
+</html>
